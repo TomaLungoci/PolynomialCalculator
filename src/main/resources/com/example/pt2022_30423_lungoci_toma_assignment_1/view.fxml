@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?impott javafx.xollections.*?>
+<?import java.lang.String?>
+
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pt2022_30423_lungoci_toma_assignment_1.controller.Controller" style=" -fx-border-width: 3"
+          gridLinesVisible="false" hgap="20" vgap="20" alignment="TOP_LEFT" stylesheets="@../../../../../../../PT2022_30423_Lungoci_Toma_Assignment_1/src/main/resources/com/example/pt2022_30423_lungoci_toma_assignment_1/styles.css">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="33"/>
+        <ColumnConstraints percentWidth="33"/>
+        <ColumnConstraints percentWidth="33"/>
+    </columnConstraints>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="First Polynomial"  textFill="black" style="-fx-font-size: 20; -fx-font-weight: bold" GridPane.halignment="RIGHT" />
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Second Polynomial"  textFill="black" style="-fx-font-size: 20; -fx-font-weight: bold"  GridPane.halignment="RIGHT" />
+    <TextField fx:id="poly1TextField" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-font-size: 15" onKeyReleased="#handleKeyReleased"/>
+    <TextField fx:id="poly2TextField" GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-font-size: 15" onKeyReleased="#handleKeyReleased"/>
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="Operation"  textFill="black" style="-fx-font-size: 20; -fx-font-weight: bold" GridPane.halignment="RIGHT" alignment="TOP_RIGHT"/>
+    <Label fx:id="error1" GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.halignment="LEFT" text="" textFill="red"/>
+    <Label fx:id="error2" GridPane.rowIndex="1" GridPane.columnIndex="2" GridPane.halignment="LEFT" text="" textFill="red"/>
+
+    <Button fx:id="computeButton" text="Compute" GridPane.rowIndex="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" textFill="black"
+            id="green" onAction="#onComputeButtonClick"/>
+
+    <ChoiceBox fx:id="choiceBox" GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-font-size: 15">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Addition" />
+                <String fx:value="Subtraction"/>
+                <String fx:value="Multiplication"/>
+                <String fx:value="Division"/>
+                <String fx:value="Derivation"/>
+                <String fx:value="Integration"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="Addition"/>
+        </value>
+    </ChoiceBox>
+
+    <Label GridPane.rowIndex="6" GridPane.columnIndex="0" text="Result"  textFill="black" style="-fx-font-size: 20; -fx-font-weight: bold" GridPane.halignment="RIGHT" />
+    <TextField GridPane.rowIndex="6" GridPane.columnIndex="1" editable="false" style="-fx-font-size: 15" GridPane.columnSpan="2" maxWidth="350" fx:id="resultTextField"/>
+</GridPane>
